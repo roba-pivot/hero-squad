@@ -1,5 +1,8 @@
 package models;
 
+
+import java.util.Objects;
+
 public class Squad {
 
     private String name;
@@ -13,15 +16,55 @@ public class Squad {
         this.cause = cause;
 
     }
+
+
     public String getName() {
         return name;
     }
-    public int getSize() {
-        return size;
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getCause() {
         return cause;
+    }
+
+    public void setCause(String cause) {
+        this.cause = cause;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Squad squad = (Squad) o;
+        return getSize() == squad.getSize() &&
+                getName().equals(squad.getName()) &&
+                getCause().equals(squad.getCause());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getName(), getCause(), getSize());
     }
 
 
