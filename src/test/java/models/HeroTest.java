@@ -21,6 +21,38 @@ public class HeroTest {
         Hero hero = setUpNewHero();
         assertTrue(hero instanceof Hero);
     }
+
+    @Test
+    public void HeroInstantiatesWithName_Hulk() throws Exception {
+        Hero hero = setUpNewHero();
+        assertEquals("Hulk", hero.getName());
+    }
+
+    @Test
+    public void HeroInstantiatesWithAge_age() throws Exception {
+        Hero hero = setUpNewHero();
+        assertEquals(67, hero.getAge());
+    }
+
+
+    @Test
+    public void HeroInstantiatesWithPower_Transformation() throws Exception {
+        Hero hero = setUpNewHero();
+        assertEquals("Transformation", hero.getPower());
+    }
+
+    @Test
+    public void HeroInstantiatesWithWeakness_Hunger() throws Exception {
+        Hero hero = setUpNewHero();
+        assertEquals("Hunger", hero.getWeakness());
+    }
+
+
+    @Test
+    public void HeroInstantiatesWithSquad_Hulk() throws Exception {
+        Hero hero = setUpNewHero();
+        assertEquals(1, hero.getSquadId());
+    }
     public Hero setUpNewHero(){
         return new Hero("Hulk", 67, "Transformation", "Hunger",1);
     }

@@ -18,4 +18,28 @@ public class Hero {
         this.weakness = weakness;
         this.squadId = squadId;
     }
+    public int getId() {
+        return id;
+    }
+
+    public String getPower() {
+        return power;
+    }
+
+
+    public String getName() {
+        return name;
+    }
+
+    public int getSquadId() {
+        return squadId;
+    }
+
+
+    public int getAge() {
+        return age;
+    }
+    public String getWeakness() {
+        return weakness;
+    }
 }
