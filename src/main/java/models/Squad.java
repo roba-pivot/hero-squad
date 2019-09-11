@@ -13,4 +13,16 @@ public class Squad {
         this.cause = cause;
 
     }
+    public String getName() {
+        return name;
+    }
+    public int getSize() {
+        return size;
+    }
+
+    public String getCause() {
+        return cause;
+    }
+
+
 }
