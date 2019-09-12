@@ -1,50 +1,65 @@
-<!DOCTYPE html>
-<html>
+{{#partial "content"}}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h2 style="color: aliceblue">Squad</h2>
+                <div class="card">
+                    <div class="card-header">
+                        <p>{{squad.name}}</p>
+                    </div>
+                    <div class="card-body">
+                        <h6>Max Size:{{squad.size}}</h6>
+                        <h6>Cause:{{squad.cause}}</h6>
 
-<head>
-    <title>{{#block "title"}}Heroes{{/block}}</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-</head>
-
-<body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
-    <a class="navbar-brand" href="/">Heroes</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Heroes
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/heroes">All Heroes</a>
-                    <a class="dropdown-item" href="/heroes/new">Add Hero</a>
+                    </div>
                 </div>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Squads
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/squads">All Squads</a>
-                    <a class="dropdown-item" href="/squads/new">Add Squad</a>
+            </div>
+            <div class="col-md-8">
+                <h3 style="color: aliceblue">Heroes</h3>
+                <div class="container">
+                <div class="row">
+                    {{#if heroes}}
+                        {{#each heroes}}
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h2> Your squad {{name}}</h2>
+                                    </div>
+                                    <div class="card-body">
+                                        <h6 class="card-text">Age: {{age}}</h6>
+                                        <h6 class="card-text">Special Power: {{power}}</h6>
+                                        <h6 class="card-text">Weakness: {{weakness}}</h6>
+                                    </div>
+                                    <div class="card-footer">
+                                        <ul class="nav nav-pills card-header-pills">
+
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="/squads/{{squadId}}/heroes/{{id}}"style="color: dodgerblue">Edit</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        {{/each}}
+                    {{else}}
+                        <div style="size: 40px" class="card">
+                         <h1 style="color:red;text-align: right">No Heroes in this squad!!</h1>
+                       </div>
+                    {{/if}}
+                 </div>
                 </div>
-            </li>
-        </ul>
+            </div>
+        </div>
+        <div class="row">
+
+            <a class="nav-link" href="/squads/{{squad.id}}/delete" style="color: red" >Delete this squad</a>
+
+
+            <a class="nav-link" href="/squads/{{squad.id}}/edit" style="color: dodgerblue">Edit this squad</a>
+
+        </div>
     </div>
-</nav>
-{{#block "content"}}
-{{/block}}
-{{#block "footer"}}
-    </body>
-    </html>
-{{/block}}
+
+
+{{/partial}}
+{{> layout.hbs}}

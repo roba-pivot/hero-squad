@@ -2,7 +2,7 @@
     <div class="container">
         <div class="card">
             <div class="card-header">
-                <h2>{{hero.name}}</h2>
+                <h2> Your Hero <span></span>{{hero.name}}</h2>
             </div>
             <div class="card-body">
                 <p class="card-text">Age: {{hero.age}}</p>
@@ -13,10 +13,10 @@
             <div class="card-footer">
                 <ul class="nav nav-pills card-header-pills">
                     <li class="nav-item">
-                        <a class="nav-link" href="/heroes/{{hero.id}}/delete" class="btn btn-danger">Delete</a>
+                        <a class="nav-link" href="/heroes/{{hero.id}}/delete" style="color: red">Delete</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/heroes/{{hero.id}}/edit" class="btn btn-secondary">Edit</a>
+                        <a class="nav-link" href="/heroes/{{hero.id}}/edit" style="color: dodgerblue">Edit</a>
                     </li>
                 </ul>
             </div>
