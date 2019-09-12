@@ -17,7 +17,7 @@ The contributors of this project is:
 * Spark - the front end framework.
 
 ```
-##Setup/Installation Requirements
+##  Setup/Installation Requirements
 ```
 * Intellij idea
 * Fork repository
@@ -41,4 +41,4 @@ The contributors of this project is:
 
 ## Licencing
 
-[MIT License](Licence.md)
+[MIT License](LICENSE.md)
