@@ -14,26 +14,11 @@ import java.util.Map;
 
 public class App {
     public static void main(String[] args) {
-
-        ProcessBuilder process = new ProcessBuilder();
-        Integer port;
-
-        // This tells our app that if Heroku sets a port for us, we need to use that port.
-        // Otherwise, if they do not, continue using port 4567.
-
-        if (process.environment().get("PORT") != null) {
-            port = Integer.parseInt(process.environment().get("PORT"));
-        } else {
-            port = 4567;
-        }
-
-        port(port);
-
         staticFileLocation("/public");
-        String connectionString = "jdbc:h2:~/hero-squad.db;INIT=RUNSCRIPT from 'classpath:db/create.sql'";
-        Sql2o sql2o = new Sql2o(connectionString, "", "");
-        // String connectionString ="jdbc:postgres://ec2-174-129-226-232.compute-1.amazonaws.com:5432/d77t188lk4oong";
-        //Sql2o sql2o = new Sql2o(connectionString, "uvghqvgdqjvpjm", "a20715d7175192b92c126977ea00648c8275430c56a1fd7a91d5084e399d3c8c");
+//        String connectionString = "jdbc:h2:~/hero-squad.db;INIT=RUNSCRIPT from 'classpath:db/create.sql'";
+//        Sql2o sql2o = new Sql2o(connectionString, "", "");
+         String connectionString ="jdbc:postgres://ec2-174-129-226-232.compute-1.amazonaws.com:5432/d77t188lk4oong";
+        Sql2o sql2o = new Sql2o(connectionString, "uvghqvgdqjvpjm", "a20715d7175192b92c126977ea00648c8275430c56a1fd7a91d5084e399d3c8c");
         Sql2oHeroDao heroDao = new Sql2oHeroDao(sql2o);
         Sql2oSquadDao squadDao = new Sql2oSquadDao(sql2o);
 
