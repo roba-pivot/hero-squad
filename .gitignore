@@ -44,6 +44,7 @@ gradle
 gradlew.bat
 gradlew
 settings.gradle
+!gradlew-wrapper.jar
 
 # IntelliJ #
 ############
