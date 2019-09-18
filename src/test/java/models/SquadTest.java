@@ -1,3 +1,4 @@
+/*
 
 package models;
 
@@ -45,4 +46,4 @@ public class SquadTest {
         return new Squad("DeadPool",5,"Fighters");
     }
 
-}
+}*/

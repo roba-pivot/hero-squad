@@ -11,7 +11,7 @@ public class DB {
 
         try {
             if (System.getenv("DATABASE_URL") == null) {
-                dbUri = new URI("postgres://localhost:5432/herosquad");
+                dbUri = new URI("postgresql://localhost:5432/herosquad");
             } else {
                 dbUri = new URI(System.getenv("DATABASE_URL"));
             }
