@@ -1,17 +1,17 @@
 SET MODE PostgreSQL;
 
 CREATE TABLE IF NOT EXISTS heroes (
-   id int PRIMARY KEY auto_increment,
+   id serial PRIMARY KEY ,
    name VARCHAR,
    age INTEGER,
    power VARCHAR,
    weakness VARCHAR,
-   squadId INTEGER,
+   squadId INTEGER
 );
 
 CREATE TABLE IF NOT EXISTS squads (
-  id int PRIMARY KEY auto_increment,
+  id serial PRIMARY KEY ,
     name VARCHAR,
     size INTEGER,
-     cause VARCHAR,
+     cause VARCHAR
 );

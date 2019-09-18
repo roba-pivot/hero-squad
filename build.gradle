@@ -7,6 +7,7 @@ group 'hero-squad'
 version '1.0-SNAPSHOT'
 mainClassName = 'App'
 sourceCompatibility = 1.8
+applicationName = "hero-squad"
 
 repositories {
     mavenCentral()
@@ -19,4 +20,9 @@ dependencies {
     compile 'org.slf4j:slf4j-simple:1.7.21'
     compile 'org.sql2o:sql2o:1.5.4'
     compile group: 'com.h2database', name: 'h2', version: '1.4.191'
+    compile 'com.sparkjava:spark-template-velocity:2.5.5'
+    compile group: 'org.postgresql', name: 'postgresql', version: "9.4-1201-jdbc41"
+
 }
+
+task stage(dependsOn: ['clean', 'installApp'])
