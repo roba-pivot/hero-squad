@@ -1,4 +1,4 @@
-/*
+
 package models;
 
 import org.junit.After;
@@ -58,4 +58,4 @@ public class HeroTest {
         return new Hero("Hulk", 67, "Transformation", "Hunger",1);
     }
 }
-*/
+

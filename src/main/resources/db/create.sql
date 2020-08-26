@@ -10,8 +10,8 @@ CREATE TABLE IF NOT EXISTS heroes (
 );
 
 CREATE TABLE IF NOT EXISTS squads (
-  id serial PRIMARY KEY ,
+    id serial PRIMARY KEY ,
     name VARCHAR,
     size INTEGER,
-     cause VARCHAR
+    cause VARCHAR
 );
